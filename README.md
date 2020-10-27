@@ -15,7 +15,7 @@
 
 ### 3.界面展示
 
-### ![Go TodoList](Go TodoList.jpg)
+### ![Go TodoList](https://github.com/KJFantasy/Go-TodoList/blob/master/Go%20TodoList.jpg)
 
 
 
