@@ -15,7 +15,7 @@
 
 ### 3.界面展示
 
-![](./Go TodoList.jpg)
+![TodoList](Go TodoList.jpg)
 
 
 
