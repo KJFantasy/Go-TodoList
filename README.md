@@ -15,7 +15,7 @@
 
 ### 3.界面展示
 
-![Go TodoList](G:\vue-todo\Go TodoList.jpg)
+### ![Go TodoList](Go TodoList.jpg)
 
 
 
