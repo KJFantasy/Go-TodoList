@@ -1,0 +1,71 @@
+<template>
+  <div class="todo-info">
+    <span class="total">待办事项还有{{ total }}个</span>
+    <div class="tabs">
+      <a
+        :class="['btn', 'primary', 'border', state == item ? 'actived' : '']"
+        v-for="(item, index) in states"
+        :key="index"
+        @click="toggleState(item)"
+      >{{ item }}</a>
+    </div>
+    <button class="btn info" @click="clearCompleted">清除已完成</button>
+  </div>
+</template>
+
+<script>
+  export default {
+    name: 'TodoInfo',
+    props: {
+      total: Number
+    },
+    data() {
+      return {
+        states: ['所有', '未完成', '已完成'],
+        state: '所有'
+      }
+    },
+    methods: {
+      toggleState(state) {
+        this.state = state
+        this.$emit('toggleState', state)
+      },
+      clearCompleted() {
+        this.$emit('clearCompleted')
+      }
+    }
+  }
+</script>
+
+<style lang="stylus" scoped>
+  @import '~styles/theme.styl'
+  @import '~styles/mixins.styl'
+
+  .todo-info
+    display: flex
+    justify-content: space-between
+    padding: 5px 10px
+    font-weight: 400
+    line-height: 30px
+    border-top: 1px solid rgba(0, 0, 0, 0.1)
+    background: #fff
+    border-bottom-left-radius: 10px
+    border-bottom-right-radius: 10px
+
+    .total
+      color: $fontColor
+
+    .tabs
+      display: flex
+      justify-content: space-between
+      width: 200px
+
+    .btn.primary.border
+      primaryBorderBtn()
+
+      &.actived
+        primaryBtn()
+
+    .btn.info
+      infoBtn()
+</style>
